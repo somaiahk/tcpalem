@@ -1,5 +1,7 @@
 package com.tcpalem.studentdata.service.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.tcpalem.studentdata.service.IPersonService;
 
 /**
@@ -7,24 +9,23 @@ import com.tcpalem.studentdata.service.IPersonService;
  * @author somaiah
  *
  */
+@Service
 public class PersonServiceImpl implements IPersonService {
 
 	@Override
-	public void create() {
-		
-		
-	}
+	public void create() {}
 
 	@Override
-	public void update() {
-		
-		
-	}
+	public void update() {}
 
 	@Override
-	public void delete() {
-		
-		
+	public void delete() {}
+
+	@Override
+	public String get() {
+		return "Sucess";
 	}
+	
+	
 
 }

@@ -7,8 +7,9 @@ package com.tcpalem.studentdata.service;
  */
 public interface IPersonService {
 	
-	public void create();
-	public void update();
-	public void delete();
+	void create();
+	void update();
+	void delete();
+	String get();
 
 }

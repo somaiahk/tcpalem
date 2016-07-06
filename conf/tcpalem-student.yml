@@ -1,0 +1,35 @@
+# The maximum time to wait for Jetty, and all Managed instances,
+# to cleanly shutdown before forcibly terminating them.
+server:
+    applicationConnectors:
+        - type: http
+          port: 7070
+    adminConnectors:
+        - type: http
+          port: 7071
+    shutdownGracePeriod: 30s
+
+# Logging settings.
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: ERROR
+
+  # Logger-specific levels.
+  loggers:
+    io.dropwizard: ERROR
+    org.springframework: ERROR
+    org.hibernate: ERROR
+    com.altisource: DEBUG
+  appenders:
+    - type: file
+      threshold: ALL
+      currentLogFilename: /var/log/tcpalem/student-backend.log
+      archive: true
+      archivedLogFilenamePattern: /var/log/tcpalem/student-backend-%d.log.gz
+      archivedFileCount: 20
+    - type: console
+      threshold: ALL
+      timeZone: UTC
+      target: stdout
+      logFormat: 
